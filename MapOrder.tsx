@@ -28,7 +28,7 @@ const MapOrder = (props: Props) => {
                 () => {
                     // NOTE: just to be safe, only try ordering layers that are mounted
                     const validLayerIdentifiers = ordering.filter(
-                        layerIdentifier => !!map.getLayer(layerIdentifier),
+                        (layerIdentifier) => !!map.getLayer(layerIdentifier),
                     );
 
                     for (let i = 0; i < validLayerIdentifiers.length; i += 1) {

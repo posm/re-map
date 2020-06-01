@@ -45,7 +45,7 @@ interface Props {
     onAnimationFrame?: (timestamp: number) => Paint | undefined;
 }
 
-function removeUndefined<T extends object>(obj: T) {
+function removeUndefined<T extends Record<string, unknown>>(obj: T) {
     const cleanNewLayerOptions: any = {};
     Object.keys(obj).forEach((key) => {
         if (key && (obj as any)[key]) {
@@ -142,7 +142,7 @@ const MapLayer = (props: Props) => {
             }
             setLayer(
                 layerKey,
-                layer => layer && ({
+                (layer) => layer && ({
                     ...layer,
                     onClick,
                     onDoubleClick,

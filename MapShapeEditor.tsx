@@ -226,7 +226,7 @@ const MapShapeEditor = (props: Props) => {
                 );
             } else {
                 const classNames = mapContainerRef.current.className.split(' ');
-                const filteredClassNames = classNames.filter(name => name !== disabledClassName);
+                const filteredClassNames = classNames.filter((name) => name !== disabledClassName);
                 mapContainerRef.current.className = _cs(...filteredClassNames);
             }
         },
